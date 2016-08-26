@@ -1,5 +1,5 @@
-# CentralBusinessValidation
-How to build central business validation on DSL / Orchestration level
+# Central Business Validation
+How to build central business validation on DSL / Orchestration level. Ensure your contracted business layer enforces the same validation that your presentation layers are.
 
 This spike project shows you how to combine:
 * Field Attributes
