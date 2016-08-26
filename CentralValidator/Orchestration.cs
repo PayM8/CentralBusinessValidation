@@ -1,41 +1,30 @@
 ﻿
 namespace CentralValidator
 {
-    using System.Collections.Generic;
-    using System.Linq;
     using Model;
-    using Validator;
-    using System;
+    using Validator.Attributes;
 
-    public class Orchestration
+    public class Orchestration 
     {
-        public static bool AddEmployee(AddEmployeeRequest request)
+        public virtual bool AddEmployee([Validate] AddEmployeeRequest request)
         {
-             var validator = new ValidationGroups();
-             var errors = validator.Validate(request);
-            
-            return !errors.Any();
+            //TODO: Impliment Logic
+
+            return true;
         }
 
-        public static bool UpdateEmployee(UpdateEmployeeRequest request)
+        public virtual bool UpdateEmployee([Validate] UpdateEmployeeRequest request)
         {
-            var validator = new ValidationGroups();
-            var errors = validator.Validate(request, obj => (obj != null) ? null : new List<string>() { "Custom Validation: There was an error nothing passed" });
+            //TODO: Impliment Logic
 
-            foreach (var error in errors)
-            {
-                Console.WriteLine(error);
-            }
-
-            return !errors.Any();
+            return true;
         }
 
-        public static bool UpdateWithNoValidation(AddModelWithoutDefaultValidation request)
+        public virtual bool UpdateWithNoValidation([Validate] AddModelWithoutDefaultValidation request)
         {
-            var validator = new ValidationGroups();
-            var errors = validator.Validate(request);
+            //TODO: Impliment Logic
 
-            return !errors.Any();
+            return true;
         }
     }
 }
